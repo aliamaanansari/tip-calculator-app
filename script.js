@@ -13,3 +13,21 @@ const calculateBill = () => {
   const perPersonTotal = total / numberOfPeople;
   perPersonTotalDiv.innerHTML = `$${perPersonTotal.toFixed(2)}`;
 };
+
+const increasePeople = () => {
+  numberOfPeople += 1;
+  numberOfPeopleDiv.innerText = numberOfPeople;
+
+  calculateBill();
+};
+
+const decreasePeople = () => {
+  if (numberOfPeople <= 1) {
+    return;
+  }
+
+  numberOfPeople -= 1;
+  numberOfPeopleDiv.innerHTML = numberOfPeople;
+
+  calculateBill();
+};
